@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\v1;
 
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -50,9 +51,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $products = Product->all();
+        $product = Product::find($id);
 
-        return response()->json($products);;
+        return response()->json($product);;
     }
 
     /**
